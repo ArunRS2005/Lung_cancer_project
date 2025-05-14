@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lung Cancer Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f2f2f2; }
+        h2 { color: #333; }
+        form { background: white; padding: 20px; border-radius: 8px; max-width: 500px; margin: auto; }
+        input, select { width: 100%; padding: 8px; margin: 10px 0; }
+        button { padding: 10px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; }
+        .result { background: #e7f3e7; padding: 15px; margin-top: 20px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <h2 align="center">Lung Cancer Prediction</h2>
+    <form method="POST">
+        <label>Age</label><input type="number" name="AGE" required>
+        <label>Gender (1 = Male, 0 = Female)</label><input type="number" name="GENDER" required>
+        <label>Smoking</label><input type="number" name="SMOKING" required>
+        <label>Yellow Fingers</label><input type="number" name="YELLOW_FINGERS" required>
+        <label>Anxiety</label><input type="number" name="ANXIETY" required>
+        <label>Peer Pressure</label><input type="number" name="PEER_PRESSURE" required>
+        <label>Chronic Disease</label><input type="number" name="CHRONIC DISEASE" required>
+        <label>Fatigue</label><input type="number" name="FATIGUE" required>
+        <label>Allergy</label><input type="number" name="ALLERGY" required>
+        <label>Wheezing</label><input type="number" name="WHEEZING" required>
+        <label>Alcohol Consuming</label><input type="number" name="ALCOHOL CONSUMING" required>
+        <label>Coughing</label><input type="number" name="COUGHING" required>
+        <label>Shortness of Breath</label><input type="number" name="SHORTNESS OF BREATH" required>
+        <label>Swallowing Difficulty</label><input type="number" name="SWALLOWING DIFFICULTY" required>
+        <label>Chest Pain</label><input type="number" name="CHEST PAIN" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <div class="result">
+            <h3>Predictions:</h3>
+            <p><strong>ML Model:</strong> {{ result['ML Prediction'] }}</p>
+            <p><strong>DL Model:</strong> {{ result['DL Prediction'] }}</p>
+            <p><strong>QML Model:</strong> {{ result['QML Prediction'] }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
